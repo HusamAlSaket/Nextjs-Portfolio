@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -137,6 +138,7 @@ export default function Contact() {
           className="text-center text-glow text-xl font-semibold"
         >
           Thanks for reaching out! I’ll get back to you soon. 🚀
+          <Link href="/" className="text-glow underline">Back to Home</Link>
         </motion.div>
       )}
     </main>
