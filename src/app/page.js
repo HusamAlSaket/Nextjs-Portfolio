@@ -1,103 +1,154 @@
-import Image from "next/image";
+'use client';
+
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main
+      className="min-h-screen bg-cover bg-center px-6 py-16 text-gray-300 font-space"
+      style={{ backgroundImage: "url('/galaxy-bg.jpg')" }}
+    >
+      {/* 🌠 Hero Section */}
+      <section className="text-center mb-20">
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold mb-4"
+          style={{ textShadow: "0 0 12px #6b53ffaa" }}
+          initial={{ opacity: 0, y: -60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Hey, I'm Husam
+        </motion.h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        <motion.p
+          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1 }}
+        >
+          A 23-year-old Computer Engineering graduate with a love for creating
+          modern, powerful web apps using Laravel, React, and Next.js.
+        </motion.p>
+
+        <div className="flex justify-center gap-4">
+          <Link
+            href="https://www.linkedin.com/in/husamalsaket/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <button className="bg-nebula text-white px-6 py-2 rounded hover:bg-glow transition">
+              Hire Me
+            </button>
+          </Link>
+          <Link href="/about">
+            <button className="border border-glow text-glow px-6 py-2 rounded hover:bg-glow hover:text-black transition">
+              About Me
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* ✨ Passion Section */}
+      <section className="text-center max-w-3xl mx-auto mb-20">
+        <h2 className="text-2xl text-glow font-semibold mb-3">
+          Designing Is My Passion
+        </h2>
+        <p className="text-gray-400">
+          As a Computer Engineer, I enjoy building clean, modern UI and
+          user-friendly experiences. Every project I work on is fueled by
+          creativity and a deep understanding of how things work.
+        </p>
+        <div className="mt-4 space-y-2">
+          <a
+            href="/cv.pdf"
+            download
+            className="text-sm text-glow underline hover:text-white block"
+          >
+            Download My CV →
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-sm text-glow underline hover:text-white block"
           >
-            Read our docs
+            View My CV →
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* 🔧 Services */}
+      <section className="mb-20 max-w-6xl mx-auto">
+        <h2 className="text-2xl text-glow font-semibold text-center mb-10">
+          What I Do
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Web Development",
+              desc: "I create professional, high-performance web platforms with modern tools and best practices.",
+            },
+            {
+              title: "Frontend Development",
+              desc: "I build responsive, accessible UIs with React, Next.js, and Tailwind — clean design, smooth UX.",
+            },
+            {
+              title: "Backend Development",
+              desc: "Secure & scalable backend APIs using Laravel & PHP. Clean architecture and robust databases.",
+            },
+          ].map(({ title, desc }) => (
+            <div
+              key={title}
+              className="bg-black bg-opacity-40 p-6 rounded-xl border border-nebula hover:shadow-glow transition"
+            >
+              <h3 className="text-white text-xl font-semibold mb-2">{title}</h3>
+              <p className="text-sm text-gray-400">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 🚀 Skills Bar */}
+      <section className="mb-20 max-w-3xl mx-auto">
+        <h2 className="text-2xl text-glow font-semibold text-center mb-8">
+          Skills Overview
+        </h2>
+        {[
+          { name: "Laravel", level: "90%" },
+          { name: "React", level: "75%" },
+          { name: "Next.js", level: "50%" },
+          { name: "TypeScript", level: "40%" },
+        ].map(({ name, level }) => (
+          <div key={name} className="mb-4">
+            <div className="flex justify-between mb-1">
+              <span>{name}</span>
+              <span>{level}</span>
+            </div>
+            <div className="w-full bg-gray-800 rounded-full h-3">
+              <div
+                className="bg-glow h-3 rounded-full"
+                style={{ width: level }}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* 🛸 Final CTA */}
+      <section className="text-center">
+        <h2 className="text-xl text-white font-semibold mb-3">
+          Have a project in mind?
+        </h2>
+        <p className="text-gray-400 mb-4">
+          Let’s build something awesome together.
+        </p>
+        <Link href="/contact">
+          <button className="bg-glow text-black px-6 py-2 rounded hover:brightness-110 transition">
+            Let's Chat
+          </button>
+        </Link>
+      </section>
+    </main>
   );
 }
