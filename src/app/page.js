@@ -87,7 +87,7 @@ export default function Home() {
             background: 'linear-gradient(120deg, #181a23cc 70%, #2a1a3a99 100%)',
           }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-1 font-[Orbitron,sans-serif] tracking-tight text-white">
+          <h2 className="text-2xl md:text-3xl font-bold mb-1 text-[#a259ff] font-[Orbitron,sans-serif] tracking-tight">
             Designing Is My Passion
           </h2>
           <p className="text-gray-200 text-base md:text-lg mb-1 max-w-xl">

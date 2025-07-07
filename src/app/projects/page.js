@@ -1,4 +1,7 @@
+
 'use client'
+
+import HeroCanvas from "../components/HeroCanvas";
 
 const projects = [
   {
@@ -29,10 +32,17 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-galaxy px-6 py-12 text-gray-300 font-space max-w-6xl mx-auto">
+    <main className="min-h-screen px-6 py-12 text-gray-300 font-space relative overflow-x-hidden max-w-6xl mx-auto"
+      style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}
+    >
+      {/* Full-page animated star galaxy background */}
+      <div className="fixed inset-0 w-full h-full -z-10">
+        <HeroCanvas />
+      </div>
+
       <h1
-        className="text-4xl md:text-5xl font-bold mb-12 text-center"
-        style={{ textShadow: '0 0 8px #6b53ffcc' }}
+        className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#a259ff] font-[Orbitron,sans-serif]"
+        style={{ textShadow: '0 0 8px #a259ff88' }}
       >
         My Projects
       </h1>
@@ -45,7 +55,7 @@ export default function Projects() {
             style={{ minHeight: '540px' }}
           >
             {/* 🧠 Title */}
-            <h2 className="text-xl font-semibold text-white mb-2">{project.title}</h2>
+            <h2 className="text-xl font-semibold text-[#a259ff] mb-2 font-[Orbitron,sans-serif]">{project.title}</h2>
 
             {/* 🖼️ Screenshot */}
             {project.image && (
@@ -57,7 +67,7 @@ export default function Projects() {
             )}
 
             {/* 📝 Description */}
-            <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
+            <p className="text-white mb-4 flex-grow">{project.description}</p>
 
             {/* 🧩 Tech Stack Badges */}
             <div className="flex flex-wrap gap-2 mb-4">

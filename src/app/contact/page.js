@@ -1,4 +1,7 @@
+
 'use client';
+
+import HeroCanvas from "../components/HeroCanvas";
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -53,9 +56,16 @@ export default function Contact() {
   }
 
   return (
-    <main className="min-h-screen bg-galaxy px-6 py-16 text-gray-300 font-space max-w-xl mx-auto">
+    <main className="min-h-screen px-6 py-16 text-gray-300 font-space relative overflow-x-hidden max-w-xl mx-auto"
+      style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}
+    >
+      {/* Full-page animated star galaxy background */}
+      <div className="fixed inset-0 w-full h-full -z-10">
+        <HeroCanvas />
+      </div>
+
       <motion.h1
-        className="text-4xl md:text-5xl font-bold mb-12 text-center text-glow"
+        className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#a259ff] font-[Orbitron,sans-serif]"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
