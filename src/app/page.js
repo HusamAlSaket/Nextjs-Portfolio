@@ -35,7 +35,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Hey, I'm Husam
+            Hey, I&apos;m Husam
           </motion.h1>
 
           <motion.p
@@ -188,7 +188,7 @@ export default function Home() {
         </p>
         <Link href="/contact">
           <button className="bg-transparent text-white font-bold px-8 py-3 rounded-2xl shadow-lg hover:bg-[#a259ff] hover:text-white transition text-lg border border-[#a259ff]/60">
-            Let's Chat
+            Let&apos;s Chat
           </button>
         </Link>
       </section>

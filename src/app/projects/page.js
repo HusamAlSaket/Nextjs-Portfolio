@@ -1,5 +1,6 @@
 
-'use client'
+"use client";
+import Image from "next/image";
 
 import HeroCanvas from "../components/HeroCanvas";
 
@@ -59,11 +60,17 @@ export default function Projects() {
 
             {/* 🖼️ Screenshot */}
             {project.image && (
-              <img
-                src={project.image}
-                alt={`${project.title} screenshot`}
-                className="rounded-md mb-4 w-full object-cover max-h-48"
-              />
+              <div className="relative w-full mb-4" style={{height:'192px'}}>
+                <Image
+                  src={project.image}
+                  alt={`${project.title} screenshot`}
+                  fill
+                  className="rounded-md object-cover"
+                  style={{objectFit:'cover'}}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={idx === 0}
+                />
+              </div>
             )}
 
             {/* 📝 Description */}

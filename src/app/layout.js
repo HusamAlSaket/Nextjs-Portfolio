@@ -9,40 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Tailwind CDN (keep only if you're not using tailwind.config.js natively) */}
-        <script src="https://cdn.tailwindcss.com"></script>
-
-        {/* Tailwind galaxy theme override */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              tailwind.config = {
-                theme: {
-                  extend: {
-                    colors: {
-                      galaxy: '#0a0a0f',         // Deep space black
-                      nebula: '#2c2f53',         // Muted purple/blue
-                      glow: '#6b53ff',           // Electric purple
-                      star: 'rgba(255,255,255,0.12)', // Subtle white for stars
-                      accent: '#00b4d8',         // Vibrant blue accent
-                      highlight: '#a29bfe',      // Soft purple highlight
-                    },
-                    fontFamily: {
-                      space: ['Orbitron', 'sans-serif'],
-                    },
-                    backgroundImage: {
-                      'nebula-gradient': 'radial-gradient(circle at 60% 40%, #6b53ff55 0%, #0a0a0f 100%)',
-                      'hero-gradient': 'linear-gradient(135deg, #6b53ff 0%, #00b4d8 100%)',
-                    },
-                    boxShadow: {
-                      glow: '0 0 16px 4px #6b53ff88, 0 0 32px 8px #00b4d844',
-                    },
-                  },
-                },
-              }
-            `,
-          }}
-        />
+        {/* Tailwind CSS should be installed via npm and imported in your CSS. Removed CDN and inline config for production build compatibility. */}
 
         {/* Preload Orbitron for better UX */}
         <link
