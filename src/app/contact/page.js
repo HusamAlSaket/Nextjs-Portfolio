@@ -2,6 +2,7 @@
 'use client';
 
 import HeroCanvas from "../components/HeroCanvas";
+import { useEffect } from 'react';
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -55,6 +56,30 @@ export default function Contact() {
     }
   }
 
+  useEffect(() => {
+    if (submitted && typeof window !== 'undefined') {
+      // Dynamically import SweetAlert2 for SSR safety
+      import('sweetalert2').then((Swal) => {
+        Swal.default.fire({
+          title: 'Message Sent!',
+          text: 'Thanks for reaching out! I’ll get back to you soon.',
+          icon: 'success',
+          background: '#181a23',
+          color: '#fff',
+          confirmButtonColor: '#a259ff',
+          confirmButtonText: 'OK',
+          customClass: {
+            title: 'font-[Orbitron,sans-serif]',
+            popup: 'rounded-2xl',
+            confirmButton: 'font-bold',
+          },
+        }).then(() => {
+          setSubmitted(false);
+        });
+      });
+    }
+  }, [submitted]);
+
   return (
     <main className="min-h-screen px-6 py-16 text-gray-300 font-space relative overflow-x-hidden max-w-xl mx-auto"
       style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}
@@ -73,7 +98,7 @@ export default function Contact() {
         Get In Touch
       </motion.h1>
 
-      {!submitted ? (
+      {!submitted && (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="flex gap-4">
             <label className="block flex-1">
@@ -141,15 +166,6 @@ export default function Contact() {
             {loading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
-      ) : (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center text-glow text-xl font-semibold"
-        >
-          Thanks for reaching out! I’ll get back to you soon. 🚀
-          <Link href="/" className="text-glow underline">Back to Home</Link>
-        </motion.div>
       )}
     </main>
   );

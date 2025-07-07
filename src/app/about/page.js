@@ -35,9 +35,7 @@ export default function About() {
           <p>
             Hey, I’m <span className="text-[#a259ff] font-semibold">Husam</span> — a Full Stack Developer & Computer Engineer passionate about clean code, smooth UX, and solving real-world problems with tech.
           </p>
-          <p>
-            I work mostly with <span className="text-[#a259ff] font-semibold">Laravel</span>, <span className="text-[#a259ff] font-semibold">React</span>, and <span className="text-[#a259ff] font-semibold">Next.js</span>, but I love picking up new tools and exploring what’s possible across the stack.
-          </p>
+          
         </motion.div>
       </section>
 
