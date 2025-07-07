@@ -16,8 +16,21 @@ export default function About() {
         <HeroCanvas />
       </div>
 
-      {/* Header */}
+      {/* Header with profile picture */}
       <section className="relative flex flex-col items-center justify-center gap-6 mb-16 max-w-4xl mx-auto py-8 md:py-12 z-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="mb-2"
+        >
+          <img
+            src="/me.JPG"
+            alt="Husam profile"
+            className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover border-4 border-[#a259ff] shadow-lg mx-auto"
+            style={{ boxShadow: '0 0 32px 0 #a259ff55, 0 2px 16px 0 #000a' }}
+          />
+        </motion.div>
         <motion.h1
           className="text-4xl md:text-5xl font-bold mb-2 text-[#a259ff] font-[Orbitron,sans-serif] tracking-tight"
           initial={{ opacity: 0, y: -40 }}
@@ -35,7 +48,6 @@ export default function About() {
           <p>
             Hey, I’m <span className="text-[#a259ff] font-semibold">Husam</span> — a Full Stack Developer & Computer Engineer passionate about clean code, smooth UX, and solving real-world problems with tech.
           </p>
-          
         </motion.div>
       </section>
 
