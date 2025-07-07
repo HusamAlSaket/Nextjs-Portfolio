@@ -1,8 +1,10 @@
 "use client";
 
 
+
 import { motion } from "framer-motion";
 import HeroCanvas from "../components/HeroCanvas";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -24,11 +26,14 @@ export default function About() {
           transition={{ duration: 1 }}
           className="mb-2"
         >
-          <img
+          <Image
             src="/me.JPG"
             alt="Husam profile"
+            width={208}
+            height={208}
             className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover border-4 border-[#a259ff] shadow-lg mx-auto"
             style={{ boxShadow: '0 0 32px 0 #a259ff55, 0 2px 16px 0 #000a' }}
+            priority
           />
         </motion.div>
         <motion.h1
